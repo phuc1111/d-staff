@@ -20,7 +20,6 @@
         <button type="button" class="btn btn-danger login-slide">Login now</button>
       </div>
     </div>
-
     <div class="review">
       <div class="review-title">Bạn có thể xem gì?</div>
       <div class="row cell">
@@ -32,15 +31,15 @@
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eveniet assumenda mollitia veniam adipisci provident, quae ratione? Reiciendis ab dicta eum aliquid sint odio repellat totam autem natus sed.</div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 user-detail">
-          <b-icon icon="person-fill" class="icon-user"></b-icon>
-          <div class="review-title-detail">Thông tin nhân viên</div>
+          <b-icon icon="person-plus-fill" class="icon-user"></b-icon>
+          <div class="review-title-detail">Tuyển dụng</div>
           <div
             class="review-description"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eveniet assumenda mollitia veniam adipisci provident, quae ratione? Reiciendis ab dicta eum aliquid sint odio repellat totam autem natus sed.</div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 user-detail">
-          <b-icon icon="person-fill" class="icon-user"></b-icon>
-          <div class="review-title-detail">Thông tin nhân viên</div>
+          <b-icon icon="envelope-fill" class="icon-user"></b-icon>
+          <div class="review-title-detail">Confessions</div>
           <div
             class="review-description"
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eveniet assumenda mollitia veniam adipisci provident, quae ratione? Reiciendis ab dicta eum aliquid sint odio repellat totam autem natus sed.</div>
@@ -51,42 +50,42 @@
     <div class="user-information">
       <div class="review-title">Thông tin nhân viên</div>
       <div class="row cell">
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 home-user1">
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
           <div class="user-team">Team1</div>
@@ -151,10 +150,87 @@ export default {
 };
 </script>
 <style>
+.slogan {
+  -webkit-animation: tracking-in-expand-fwd-bottom 1.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand-fwd-bottom 1.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+.login-slide {
+  -webkit-animation: tracking-in-expand-fwd-left 1.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand-fwd-left 1.8s
+    cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+@-webkit-keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd-bottom {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateY(-500px);
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes tracking-in-expand-fwd-left {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateX(-500px);
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd-left {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateX(-500px);
+    transform: translateX(-500px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0) translateY(0);
+    transform: translateZ(0) translateY(0);
+    opacity: 1;
+  }
+}
 .top_brand {
   position: relative;
-  /* max-width: 1500px;
-  margin: 20px auto; */
+
+  margin: 65px 0 0 0;
   height: 700px;
   filter: blur(3px);
   -webkit-filter: blur(1px);
@@ -176,7 +252,7 @@ export default {
   background: rgb(22, 22, 22);
   opacity: 0.5;
   z-index: 7;
-  top: 60px;
+  top: 65px;
 }
 .slogan {
   color: aliceblue;
@@ -218,6 +294,10 @@ export default {
   background: #eae3e3;
   padding: 40px 15px !important;
 }
+.user-detail:hover {
+  border: 0.5px solid rgb(219, 199, 199);
+  border-radius: 25px;
+}
 .review-title {
   color: #e83c37;
   justify-content: left;
@@ -244,11 +324,13 @@ export default {
 .cell .b-avatar {
   width: 7em !important;
   height: 7em !important;
+  box-shadow: 10px 5px 15px rgb(77, 74, 74);
 }
 .home-user1 {
   margin: 20px 0;
 }
 .user-name {
+  margin-top: 5px;
   font-weight: bold;
 }
 .recruitments {

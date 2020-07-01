@@ -1,0 +1,10 @@
+{
+    "navbar": {
+        "home": "home",
+        "contact": "contact",
+        "about": "about",
+        "question": "question",
+        "user": "user",
+        "lang": "lang"
+    }
+}

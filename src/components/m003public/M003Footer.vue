@@ -44,11 +44,11 @@ export default {
 </script>
 <style>
 .footer {
-  background: #ac221d;
+  background: #ab3835;
 }
 
 .list-group-item {
-  background: #ac221d !important;
+  background: #ab3835 !important;
   color: antiquewhite;
 }
 .list-group-item {
