@@ -11,4 +11,5 @@ class Depart {
         return this[key]
     }
 }
+
 export default Depart;

@@ -107,12 +107,18 @@ export default {
       this.$router.push({ name: "M001AdminUpdateDepart", params: { id: id } });
     },
     getDepart() {
-      departmentService.getAllDepart().then(data => {
-        data.data.data.forEach(departs => {
-          let depart = new Depart(departs);
-          this.items.push(depart);
+      departmentService
+        .getAllDepart()
+        .then(data => {
+          console.log(data);
+          data.data.data.forEach(departs => {
+            let depart = new Depart(departs);
+            this.items.push(depart);
+          });
+        })
+        .catch(err => {
+          console.log(err.response);
         });
-      });
     },
     deleteDepart(id) {
       departmentService

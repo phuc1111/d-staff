@@ -10,6 +10,7 @@
         <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 left-slide">
           <div
             class="slogan"
+            v-cloak
           >Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit optio quisquam veritatis. At deleniti necessitatibus dolorum placeat quia autem facilis fuga voluptatem tenetur quae vitae, sed aliquam illo quidem. Nemo!</div>
         </div>
 
@@ -19,6 +20,7 @@
       </div>
       <div class="row">
         <button
+          v-cloak
           type="button"
           @click="login()"
           class="btn btn-danger login-slide"
