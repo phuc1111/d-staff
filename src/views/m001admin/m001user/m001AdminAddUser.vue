@@ -107,8 +107,8 @@
 
 <script>
 /* eslint-disable */
-import M001Navbar from "../../components/m001admin/M001Navbar";
-import M001LeftMenu from "../../components/m001admin/M001LeftMenu";
+import M001Navbar from "@/components/m001admin/M001Navbar";
+import M001LeftMenu from "@/components/m001admin/M001LeftMenu";
 
 export default {
   name: "M001AminAddUser",

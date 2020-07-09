@@ -1,0 +1,1 @@
+module.exports.API_URL = "https://d-soft-human-resource.herokuapp.com/apis/v0.1"

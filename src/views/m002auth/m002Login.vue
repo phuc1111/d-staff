@@ -3,23 +3,45 @@
     <!-- <b-avatar class="avatar"></b-avatar> -->
     <img src="../../assets/logo.png" alt />
     <b-form-input v-model="email" placeholder="Email"></b-form-input>
-    <b-form-input v-model="password" placeholder="Mật khẩu"></b-form-input>
+    <b-form-input type="password" v-model="password" :placeholder="$t('login.password')"></b-form-input>
     <div class="login-text">
-      <div>Quên mật khẩu</div>
-      <div>Trang chủ</div>
+      <div>{{$t("login.forgot-password")}}</div>
+      <div @click="backToHome()">{{$t("navbar.home")}}</div>
     </div>
-    <button type="button" class="btn btn-danger">Đăng nhập</button>
+    <button @click="login()" type="button" class="btn btn-danger login-bn">{{$t("slide.login")}}</button>
   </div>
 </template>
 <script>
 /* eslint-disable */
+import LoginService from "../../../api/loginApi";
 export default {
   name: "M002Login",
   data() {
     return {
-      email: null,
-      password: null
+      email: "dsoft@gmail.com",
+      password: "dsoft@gmail.com"
     };
+  },
+  methods: {
+    backToHome() {
+      this.$router.push({ name: "Home" });
+    },
+    login() {
+      var data = {
+        email: this.email,
+        password: this.password
+      };
+      LoginService.login(data).then(res => {
+        console.log(res);
+        sessionStorage.setItem("token", res.data.token);
+        this.$router.push({ name: "Home" });
+      });
+      // sessionStorage.setItem(
+      //   "token",
+      //   "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJkc29mdGFkbWluIiwiaWF0IjoxNTkzNTg5NTk0LCJleHAiOjE1OTQ2OTE1OTN9.R4pxUjP3ev01DRYPPOUMI0lNBwEB-ATh23piCy2PiIhJhb0BBFFBDKCyYFZLfn3hQ7pZs0jklNlBDaZb89qQfg"
+      // );
+      // this.$router.push({ name: "Home" });
+    }
   }
 };
 </script>
@@ -42,6 +64,11 @@ export default {
 .login-text {
   display: flex;
   justify-content: space-around;
-  color: rgb(170, 12, 12);
+  color: #df2f29 !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.login-bn {
+  margin: 15px 0;
 }
 </style>

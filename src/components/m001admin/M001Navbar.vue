@@ -1,7 +1,7 @@
 <template>
   <div class="menu-top">
     <b-navbar toggleable="lg" type="dark" class="test">
-      <b-navbar-brand href="#">D-staff</b-navbar-brand>
+      <b-navbar-brand class="nav-white" href="#">D-staff</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -12,7 +12,7 @@
             <b-icon icon="envelope" class="nav-icon"></b-icon>
             <b-icon icon="bell-fill" class="nav-icon noti"></b-icon>
             <b-avatar variant="secondary" class="nav-icon"></b-avatar>
-            <b-nav-item-dropdown text="Admin" right>
+            <b-nav-item-dropdown class="nav-white" text="Admin" right>
               <b-dropdown-item href="#">Đăng xuất</b-dropdown-item>
               <b-dropdown-item href="#">Profile</b-dropdown-item>
             </b-nav-item-dropdown>
@@ -53,6 +53,12 @@ export default {
 }
 .test {
   background-color: #3c8dbc !important;
+}
+.nav-white {
+  color: aliceblue !important;
+}
+.nav-white span {
+  color: aliceblue !important;
 }
 @media only screen and (max-width: 47.24em) {
   .form-inline {

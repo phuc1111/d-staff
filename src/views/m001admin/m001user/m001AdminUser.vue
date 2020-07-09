@@ -1,4 +1,3 @@
-
 <template>
   <div class="home">
     <M001Navbar />
@@ -9,18 +8,24 @@
       <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
         <div class="home-title">
           <b-icon icon="chevron-left" class="icon-back"></b-icon>
-          <div>Phòng ban</div>
+          <div>Nhân viên</div>
         </div>
         <div class="row">
-          <button type="button" class="btn btn-info adddepart" @click="addDepart()">Thêm phòng ban</button>
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!-- <b-table striped hover :items="items"></b-table> -->
+            <div class="search">
+              <button type="button" class="btn btn-info adduser" @click="addUser()">Thêm nhân viên</button>
+              <input type="text" placeholder="Tìm kiếm theo tên" class="search-data" />
+            </div>
             <table class="table">
               <thead>
                 <tr>
                   <th>STT</th>
-                  <th>Tên phòng ban</th>
-                  <th>Mã phòng ban</th>
-                  <th>Mô tả</th>
+                  <th>Tên nhân viên</th>
+                  <th>Team</th>
+                  <th>Chức vụ</th>
+                  <th>Ngày vào</th>
+                  <th>Ngày sinh</th>
                   <th>Action</th>
                 </tr>
               </thead>
@@ -28,8 +33,9 @@
                 <tr v-for="(user, i) in items " :key="i">
                   <td scope="row">{{i+1}}</td>
                   <td>{{user.ten}}</td>
-
-                  <td>{{user.Ngay_sinh}}</td>
+                  <td>{{user.team}}</td>
+                  <td>{{user.chuc_vu}}</td>
+                  <td>{{user.Ngay_vao_cong_ty}}</td>
                   <td>{{user.Ngay_sinh}}</td>
                   <td>
                     <b-icon icon="x-circle-fill" class="icon-delete"></b-icon>
@@ -37,6 +43,12 @@
                 </tr>
               </tbody>
             </table>
+            <b-pagination
+              class="pagination"
+              :total-rows="rows"
+              :per-page="perPage"
+              aria-controls="my-table"
+            ></b-pagination>
           </div>
         </div>
       </div>
@@ -45,11 +57,12 @@
 </template>
 <script>
 /* eslint-disable */
-import M001Navbar from "../../components/m001admin/M001Navbar";
-import M001LeftMenu from "../../components/m001admin/M001LeftMenu";
+import M001Navbar from "@/components/m001admin/M001Navbar";
+import M001LeftMenu from "@/components/m001admin/M001LeftMenu";
 
+import UserDataService from "@/../api/userApi";
 export default {
-  name: "M001AdminDepartment",
+  name: "M001AdminHome",
   components: {
     M001Navbar,
     M001LeftMenu
@@ -127,9 +140,21 @@ export default {
     };
   },
   methods: {
-    addDepart() {
-      this.$router.push({ name: "M001AdminAddDepart" });
+    addUser() {
+      this.$router.push({ name: "M001AdminAddUser" });
+    },
+    getAllUser() {
+      UserDataService.getAllUser()
+        .then(data => {
+          console.log(data);
+        })
+        .catch(err => {
+          console.log(err.response);
+        });
     }
+  },
+  mounted() {
+    this.getAllUser();
   },
   computed: {
     rows() {
@@ -197,8 +222,8 @@ thead {
   color: #a71d1d;
   font-size: 20px;
 }
-.adddepart {
-  margin: 15px;
+.adduser {
+  margin: 15px 0;
   background: #3c8dbc !important;
 }
 .pagination {

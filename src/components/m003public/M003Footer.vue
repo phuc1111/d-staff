@@ -4,22 +4,22 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <b-list-group>
-            <b-list-group-item>Trang Chủ</b-list-group-item>
-            <b-list-group-item>Liên hệ</b-list-group-item>
-            <b-list-group-item>Về chúng tôi</b-list-group-item>
+            <b-list-group-item>{{$t("navbar.home")}}</b-list-group-item>
+            <b-list-group-item>{{$t("navbar.contact")}}</b-list-group-item>
+            <b-list-group-item>{{$t("navbar.about")}}</b-list-group-item>
           </b-list-group>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <b-list-group>
-            <b-list-group-item>Địa chỉ: 20 Hải Phòng</b-list-group-item>
-            <b-list-group-item>Số điện thoại: 01123456789</b-list-group-item>
+            <b-list-group-item>{{$t("footer.address")}}</b-list-group-item>
+            <b-list-group-item>{{$t("footer.phone")}}</b-list-group-item>
             <b-list-group-item>Email: ABC@gmail.com</b-list-group-item>
           </b-list-group>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
           <b-list-group>
-            <b-list-group-item>Confessions</b-list-group-item>
-            <b-list-group-item>Đặt câu hỏi</b-list-group-item>
+            <b-list-group-item>{{$t("review.confessions")}}</b-list-group-item>
+            <b-list-group-item>{{$t("navbar.question")}}</b-list-group-item>
           </b-list-group>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">

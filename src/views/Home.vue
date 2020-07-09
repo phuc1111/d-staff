@@ -1,3 +1,4 @@
+
 <template>
   <div class="home">
     <M003Navbar />
@@ -17,39 +18,58 @@
         </div>
       </div>
       <div class="row">
-        <button type="button" class="btn btn-danger login-slide">Login now</button>
+        <button
+          type="button"
+          @click="login()"
+          class="btn btn-danger login-slide"
+        >{{$t("slide.login")}}</button>
       </div>
     </div>
-    <div class="review">
-      <div class="review-title">Bạn có thể xem gì?</div>
+
+    <div
+      data-aos="fade-up"
+      data-aos-offset="300"
+      data-aos-delay="30"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top"
+      class="review"
+    >
+      <div class="review-title">{{$t("review.title")}}</div>
       <div class="row cell">
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 user-detail">
           <b-icon icon="person-fill" class="icon-user"></b-icon>
-          <div class="review-title-detail">Thông tin nhân viên</div>
-          <div
-            class="review-description"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eveniet assumenda mollitia veniam adipisci provident, quae ratione? Reiciendis ab dicta eum aliquid sint odio repellat totam autem natus sed.</div>
+          <div class="review-title-detail">{{$t("review.user")}}</div>
+          <div class="review-description">{{$t("review.user-content")}}</div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 user-detail">
           <b-icon icon="person-plus-fill" class="icon-user"></b-icon>
-          <div class="review-title-detail">Tuyển dụng</div>
-          <div
-            class="review-description"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eveniet assumenda mollitia veniam adipisci provident, quae ratione? Reiciendis ab dicta eum aliquid sint odio repellat totam autem natus sed.</div>
+          <div class="review-title-detail">{{$t("review.recruitment")}}</div>
+          <div class="review-description">{{$t("review.recruitment-content")}}</div>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 user-detail">
           <b-icon icon="envelope-fill" class="icon-user"></b-icon>
-          <div class="review-title-detail">Confessions</div>
-          <div
-            class="review-description"
-          >Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat deserunt eveniet assumenda mollitia veniam adipisci provident, quae ratione? Reiciendis ab dicta eum aliquid sint odio repellat totam autem natus sed.</div>
+          <div class="review-title-detail">{{$t("review.confessions")}}</div>
+          <div class="review-description">{{$t("review.confessions-content")}}</div>
         </div>
       </div>
     </div>
 
-    <div class="user-information">
-      <div class="review-title">Thông tin nhân viên</div>
-      <div class="row cell">
+    <div
+      data-aos="fade-up"
+      data-aos-offset="300"
+      data-aos-delay="30"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top"
+      class="user-information"
+    >
+      <div class="review-title">{{$t("review.user")}}</div>
+      <div v-lazy-container="{ selector: 'span' }" class="row cell">
         <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3 home-user1">
           <b-avatar></b-avatar>
           <div class="user-name">Mr Dam</div>
@@ -93,35 +113,45 @@
       </div>
     </div>
 
-    <div class="recruitments">
-      <div class="review-title">Tuyển dụng</div>
+    <div
+      data-aos="fade-up"
+      data-aos-offset="300"
+      data-aos-delay="30"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top"
+      class="recruitments"
+    >
+      <div class="review-title">{{$t("review.recruitment")}}</div>
       <div class="recruitment-content">
         <div class="recruitment">
           <div class="recruitment-position">Senior Java</div>
-          <div class="recruitment-require">Yêu cầu</div>
+          <div class="recruitment-require">{{$t("review.recruitment-require")}}</div>
           <div
             class="recruitment-requeri-detail"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum similique fuga cupiditate, ratione repudiandae blanditiis libero aut veniam animi laborum neque inventore. Ab illo quisquam harum nobis eum maxime temporibus.</div>
-          <div class="recruitment-require">Mô tả công việc</div>
+          <div class="recruitment-require">{{$t("review.recruitment-description")}}</div>
           <div
             class="recruitment-requeri-detail"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum similique fuga cupiditate, ratione repudiandae blanditiis libero aut veniam animi laborum neque inventore. Ab illo quisquam harum nobis eum maxime temporibus.</div>
-          <div class="recruitment-require">Quyền lợi</div>
+          <div class="recruitment-require">{{$t("review.recruitment-benefit")}}</div>
           <div
             class="recruitment-requeri-detail"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum similique fuga cupiditate, ratione repudiandae blanditiis libero aut veniam animi laborum neque inventore. Ab illo quisquam harum nobis eum maxime temporibus.</div>
         </div>
         <div class="recruitment">
           <div class="recruitment-position">Senior Java</div>
-          <div class="recruitment-require">Yêu cầu</div>
+          <div class="recruitment-require">{{$t("review.recruitment-require")}}</div>
           <div
             class="recruitment-requeri-detail"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum similique fuga cupiditate, ratione repudiandae blanditiis libero aut veniam animi laborum neque inventore. Ab illo quisquam harum nobis eum maxime temporibus.</div>
-          <div class="recruitment-require">Mô tả công việc</div>
+          <div class="recruitment-require">{{$t("review.recruitment-description")}}</div>
           <div
             class="recruitment-requeri-detail"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum similique fuga cupiditate, ratione repudiandae blanditiis libero aut veniam animi laborum neque inventore. Ab illo quisquam harum nobis eum maxime temporibus.</div>
-          <div class="recruitment-require">Quyền lợi</div>
+          <div class="recruitment-require">{{$t("review.recruitment-benefit")}}</div>
           <div
             class="recruitment-requeri-detail"
           >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum similique fuga cupiditate, ratione repudiandae blanditiis libero aut veniam animi laborum neque inventore. Ab illo quisquam harum nobis eum maxime temporibus.</div>
@@ -135,13 +165,18 @@
 
 <script>
 /* eslint-disable */
-import M003Navbar from "../components/m003public/M003Navbar";
-import M003Footer from "../components/m003public/M003Footer";
+const M003Navbar = () => import("../components/m003public/M003Navbar");
+const M003Footer = () => import("../components/m003public/M003Footer");
 
 export default {
   name: "Home",
   data() {
     return {};
+  },
+  methods: {
+    login() {
+      this.$router.push({ name: "M002Login" });
+    }
   },
   components: {
     M003Navbar,
@@ -158,9 +193,9 @@ export default {
 }
 
 .login-slide {
-  -webkit-animation: tracking-in-expand-fwd-left 1.8s
+  -webkit-animation: tracking-in-expand-fwd-left 2.8s
     cubic-bezier(0.215, 0.61, 0.355, 1) both;
-  animation: tracking-in-expand-fwd-left 1.8s
+  animation: tracking-in-expand-fwd-left 2.8s
     cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 @-webkit-keyframes tracking-in-expand-fwd-bottom {
@@ -198,8 +233,9 @@ export default {
 @-webkit-keyframes tracking-in-expand-fwd-left {
   0% {
     letter-spacing: -0.5em;
-    -webkit-transform: translateX(-500px);
-    transform: translateX(-500px);
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    transform: rotateY(720deg);
     opacity: 0;
   }
   40% {
@@ -208,14 +244,16 @@ export default {
   100% {
     -webkit-transform: translateZ(0) translateY(0);
     transform: translateZ(0) translateY(0);
+    transform: rotateY(0);
     opacity: 1;
   }
 }
 @keyframes tracking-in-expand-fwd-left {
   0% {
     letter-spacing: -0.5em;
-    -webkit-transform: translateX(-500px);
-    transform: translateX(-500px);
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    transform: rotateY(720deg);
     opacity: 0;
   }
   40% {
@@ -225,34 +263,36 @@ export default {
     -webkit-transform: translateZ(0) translateY(0);
     transform: translateZ(0) translateY(0);
     opacity: 1;
+    transform: rotateY(0);
   }
 }
 .top_brand {
-  position: relative;
-
-  margin: 65px 0 0 0;
+  z-index: 4;
+  margin: 75px 0 0 0;
   height: 700px;
+
   filter: blur(3px);
   -webkit-filter: blur(1px);
+
   background-image: url("../../public/img/brand1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-color: antiquewhite;
-  /* opacity: 0.8; */
-  z-index: 4;
-  background-position: center;
+
+  position: relative;
+  background-position: right;
 }
 .top_overlight {
   position: absolute;
   /* max-width: 1500px; */
   /* margin: 0 9%; */
-  width: 100vw;
+  width: 100%;
 
   height: 700px;
   background: rgb(22, 22, 22);
   opacity: 0.5;
   z-index: 7;
-  top: 65px;
+  top: 75px;
 }
 .slogan {
   color: aliceblue;
@@ -273,6 +313,10 @@ export default {
 }
 .login-slide {
   margin: 160px 40px;
+  transition: all linear 1s;
+}
+.login-slide:hover {
+  transform: rotate(1080deg) !important;
 }
 .home-content {
   max-width: 1200px;
@@ -365,10 +409,10 @@ export default {
 }
 @media only screen and (max-width: 46.24em) {
   .top_brand {
-    height: 500px;
+    height: 400px;
   }
   .top_overlight {
-    height: 500px;
+    height: 400px;
   }
   .top {
     margin: 30px 10%;
@@ -381,6 +425,10 @@ export default {
     background: #eae3e3;
     padding: 20px 4%;
     border-radius: 15px;
+  }
+  .slogan {
+    font-size: 16px;
+    margin: 10% 0 0 0;
   }
 }
 @media only screen and (min-width: 46.25em) and (max-width: 1200px) {

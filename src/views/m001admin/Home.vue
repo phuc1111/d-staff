@@ -75,8 +75,8 @@
 </template>
 <script>
 /* eslint-disable */
-import M001Navbar from "../../components/m001admin/M001Navbar";
-import M001LeftMenu from "../../components/m001admin/M001LeftMenu";
+const M001Navbar = () => import("@/components/m001admin/M001Navbar");
+const M001LeftMenu = () => import("../../components/m001admin/M001LeftMenu");
 
 export default {
   name: "M001AdminHome",

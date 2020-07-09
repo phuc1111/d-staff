@@ -1,10 +1,35 @@
 {
     "navbar": {
-        "home": "trang chủ",
-        "contact": "liên hệ",
-        "about": "về chúng tôi",
-        "question": "câu hỏi",
-        "user": "người dùng",
-        "lang": "Ngôn ngữ"
+        "home": "Trang chủ",
+        "contact": "Liên hệ",
+        "about": "Về chúng tôi",
+        "question": "Câu hỏi",
+        "user": "Người dùng",
+        "lang": "Ngôn ngữ",
+        "logout": "Đăng xuất"
+    },
+    "slide": {
+        "login": "Đăng nhập",
+        "slogan": ""
+    },
+    "review": {
+        "title": "Bạn có thể xem gì",
+        "user-content": "Bạn có thể xem được các thông tin cơ bản của tất cả nhân viên nếu bạn là admin",
+        "user": "Thông tin nhân viên",
+        "recruitment-content": "Chúng tôi đang từng ngày phát triển nên việc tuyển dụng các nhân viên tốt là vấn đề hàng đầu",
+        "recruitment": "Tuyển dụng",
+        "recruitment-require": "Yêu cầu",
+        "recruitment-description": "Mô tả công việc",
+        "recruitment-benefit": "Quyền lợi",
+        "confessions-content": "Tại đây bạn có thể gửi những lời tâm sự hay tình cảm của mình cho các nhân viên trong công ty, yên tâm vì nó ẩn danh",
+        "confessions": "Tâm sự"
+    },
+    "footer": {
+        "address": "Địa chỉ: 20 Hải Phòng",
+        "phone": "Số điện thoại: 0123456789"
+    },
+    "login": {
+        "password": "Mật khẩu",
+        "forgot-password": "Quên mật khẩu"
     }
 }

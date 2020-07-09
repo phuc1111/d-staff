@@ -9,7 +9,8 @@
 
       <b-collapse id="nav-collapse" is-nav class="mr-auto">
         <b-navbar-nav center>
-          <b-nav-item href="#">{{$t("navbar.home")}}</b-nav-item>
+          <b-nav-item :to="{name: 'M002Login'}">{{$t("navbar.home")}}</b-nav-item>
+
           <b-nav-item href="#">{{$t("navbar.contact")}}</b-nav-item>
           <b-nav-item href="#">{{$t("navbar.about")}}</b-nav-item>
           <b-nav-item href="#">{{$t("navbar.question")}}</b-nav-item>
@@ -17,19 +18,18 @@
         </b-navbar-nav>
 
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-          <b-nav-item-dropdown :text="$t('navbar.lang')" right>
+        <b-navbar-nav class="ml-auto menu-drop">
+          <b-nav-item-dropdown :text="this.$i18n.locale" right>
             <b-dropdown-item href="#" @click="setLang('en')">EN</b-dropdown-item>
             <b-dropdown-item href="#" @click="setLang('vn')">VN</b-dropdown-item>
           </b-nav-item-dropdown>
           <b-nav-item-dropdown right class="menu-drop">
-            <!-- Using 'button-content' slot -->
             <template v-slot:button-content>
               <em>{{$t("navbar.user")}}</em>
             </template>
 
-            <b-dropdown-item href="#">Đăng nhập</b-dropdown-item>
-            <b-dropdown-item href="#">Đăng xuất</b-dropdown-item>
+            <b-dropdown-item href="#" @click="login()" v-if="!token">{{$t("slide.login")}}</b-dropdown-item>
+            <b-dropdown-item href="#" @click="logout()" v-if="token">{{$t("navbar.logout")}}</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-navbar-nav>
       </b-collapse>
@@ -41,13 +41,28 @@
 export default {
   name: "M003Navbar",
   data() {
-    return {};
+    return {
+      user: null,
+      token: null
+    };
   },
   methods: {
     setLang(lang) {
       // this.$i18n.locale = lang;
       this.$store.dispatch("setLang", lang);
+    },
+    login() {
+      this.$router.push({ name: "M002Login" });
+    },
+    logout() {
+      sessionStorage.clear();
+      //this.$router.push({ name: "Home" });
+      location.reload();
     }
+  },
+  mounted() {
+    this.token = sessionStorage.getItem("token");
+    console.log(this.token);
   }
 };
 </script>
@@ -60,6 +75,7 @@ export default {
   padding: 0 30px;
   position: absolute;
   width: 100%;
+  z-index: 20;
   /* padding: 0 40px !important; */
 }
 .nav-link,

@@ -1,10 +1,35 @@
 {
     "navbar": {
-        "home": "home",
-        "contact": "contact",
-        "about": "about",
-        "question": "question",
-        "user": "user",
-        "lang": "lang"
+        "home": "Home",
+        "contact": "Contact",
+        "about": "About",
+        "question": "Question",
+        "user": "User",
+        "lang": "Lang",
+        "logout": "Logout"
+    },
+    "slide": {
+        "login": "Login now",
+        "slogan": ""
+    },
+    "review": {
+        "title": "You can see",
+        "user-content": "You can view the basic information of all employees if you are an admin",
+        "user": "User information",
+        "recruitment-content": "We are growing day by day, so hiring good employees is the top issue",
+        "recruitment": "Recruitment",
+        "recruitment-require": "Require",
+        "recruitment-description": "Recruitment description",
+        "recruitment-benefit": "Benefit",
+        "confessions-content": "Here you can send your confidences or feelings to employees in the company, peace of mind because it is anonymous",
+        "confessions": "Confessions"
+    },
+    "footer": {
+        "address": "Address: 20 Hai Phong",
+        "phone": "Phone: 0123456789"
+    },
+    "login": {
+        "password": "Password",
+        "forgot-password": "Forgot password"
     }
 }
