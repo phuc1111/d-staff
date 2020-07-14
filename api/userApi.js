@@ -16,7 +16,7 @@ class UserDataService {
         });
     }
 
-    createUser(data, token) {
+    createUser(data) {
         return axios.post(`${INSTRUCTOR_API_URL}`, data, {
             headers: {
                 Authorization: 'Bearer ' + token
@@ -24,8 +24,8 @@ class UserDataService {
         });
     }
 
-    deActiveUser(id, token) {
-        return axios.put(`${INSTRUCTOR_API_URL}/deactivation/${id}`, {
+    deActiveUser(id, data) {
+        return axios.put(`${INSTRUCTOR_API_URL}/deactivation/${id}`, data, {
             headers: {
                 Authorization: 'Bearer ' + token
             }

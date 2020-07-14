@@ -2,8 +2,13 @@
   <div class="login">
     <!-- <b-avatar class="avatar"></b-avatar> -->
     <img src="../../assets/logo.png" alt />
-    <b-form-input v-model="email" placeholder="Email"></b-form-input>
-    <b-form-input type="password" v-model="password" :placeholder="$t('login.password')"></b-form-input>
+    <b-form-input class="email" v-model="email" placeholder="Email"></b-form-input>
+    <b-form-input
+      class="email"
+      type="password"
+      v-model="password"
+      :placeholder="$t('login.password')"
+    ></b-form-input>
     <div class="login-text">
       <div>{{$t("login.forgot-password")}}</div>
       <div @click="backToHome()">{{$t("navbar.home")}}</div>
@@ -70,5 +75,16 @@ export default {
 }
 .login-bn {
   margin: 15px 0;
+}
+.email::after {
+  content: "OK ";
+  background: rgb(95, 86, 86);
+  color: red;
+}
+button::after {
+  content: " ";
+  background: rgb(95, 86, 86);
+  color: red;
+  border-right: 12px;
 }
 </style>

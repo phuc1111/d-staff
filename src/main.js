@@ -50,6 +50,12 @@ Vue.use(Chartkick.use(Chart))
 
 Vue.config.productionTip = false;
 
+Vue.filter('ft_null', function (value) {
+  if (!value) return 'Chưa có'
+  if (value == null) return 'Chưa có'
+  else return value
+})
+
 export const app = new Vue({
   created() {
     AOS.init({

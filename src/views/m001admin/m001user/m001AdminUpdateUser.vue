@@ -8,7 +8,7 @@
       <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
         <div class="admin_add_user">
           <b-icon @click="back()" icon="chevron-left" class="icon-back"></b-icon>
-          <div>Thêm nhân viên</div>
+          <div>Sửa thông tin nhân viên</div>
         </div>
         <div class="form-add">
           <div class="row rows">
@@ -116,7 +116,7 @@
               <b-form-input placeholder="Chuyên ngành"></b-form-input>
             </div>
           </div>
-          <button type="button" @click="addUser()" class="btn-add-user">Thêm nhân viên</button>
+          <button type="button" @click="updateUser()" class="btn-add-user">Sửa nhân viên</button>
         </div>
       </div>
     </div>
@@ -128,10 +128,10 @@
 import M001Navbar from "@/components/m001admin/M001Navbar";
 import M001LeftMenu from "@/components/m001admin/M001LeftMenu";
 
-import UserDataService from "@/../api/userApi";
+import MemberDataService from "@/../api/memberApi";
 // import Depart from "@/../DataObject/Department";
 export default {
-  name: "M001AminAddUser",
+  name: "M001AminUpdateUser",
   components: {
     M001Navbar,
     M001LeftMenu
@@ -208,11 +208,7 @@ export default {
         appendToast: true
       });
     },
-    addUser() {
-      if (!this.fullName) {
-        this.toast("Vui lòng nhập tên nhân viên");
-        return;
-      }
+    updateUser() {
       var form = new FormData();
       form.append("fullName", this.fullName);
       form.append("gender", this.gender);
@@ -226,19 +222,25 @@ export default {
       form.append("identityCardNumber", this.identityCardNumber);
       form.append("homeTown", this.homeTown);
       form.append("additionalInformation", this.additionalInformation);
-      form.append("avatar", this.file);
+      form.append("file", this.file);
 
-      UserDataService.createUser(form)
+      MemberDataService.updateUser(this.$route.params.id, form)
         .then(data => {
           this.$router.push({ name: "M001AdminUser" });
         })
         .then(() => {
-          this.toast("Tạo user thành công");
+          this.toast("Sửa nhân viên thành công");
         })
         .catch(err => {
-          this.toast(err.response.data.data.message);
+          console.log(err.response);
+          this.toast(err.response.data.error);
         });
     }
+  },
+  mounted() {
+    // UserDataService.getUserById(this.$route.params.id).then(data => {
+    //   console.log(data);
+    // });
   }
 };
 </script>
